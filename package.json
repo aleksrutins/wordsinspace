@@ -1,0 +1,23 @@
+{
+  "name": "wordsinspace",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "bun run build:lexicons && vite build",
+    "preview": "wrangler pages dev",
+    "deploy": "bun run build && wrangler pages deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings",
+    "build:lexicons": "tsp compile typelex/main.tsp"
+  },
+  "dependencies": {
+    "hono": "^4.9.10"
+  },
+  "devDependencies": {
+    "@hono/vite-build": "^1.2.0",
+    "@hono/vite-dev-server": "^0.18.2",
+    "@typelex/emitter": "^0.1.4",
+    "@typespec/compiler": "^1.4.0",
+    "vite": "^6.3.5",
+    "wrangler": "^4.4.0"
+  }
+}
