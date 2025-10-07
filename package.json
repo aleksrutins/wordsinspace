@@ -3,9 +3,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsp compile typelex/main.tsp && vite build",
+    "build": "bun run build:lexicons && vite build",
     "preview": "wrangler pages dev",
-    "deploy": "npm run build && wrangler pages deploy",
+    "deploy": "bun run build && wrangler pages deploy",
     "cf-typegen": "wrangler types --env-interface CloudflareBindings",
     "build:lexicons": "tsp compile typelex/main.tsp"
   },
